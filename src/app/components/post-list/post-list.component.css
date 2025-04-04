@@ -1,0 +1,19 @@
+.post {
+    max-width: 600px;  /* Limitar el ancho de las publicaciones */
+    margin: 0 auto;    /* Centrar las publicaciones */
+  }
+  
+  .card-title {
+    font-size: 1.2rem;  /* Hacer más grande el título del usuario */
+    color: #333;        /* Colorear el título */
+  }
+  
+  .card-body {
+    font-size: 1rem;     /* Aumentar el tamaño del texto del post */
+    line-height: 1.5;    /* Mejorar la legibilidad del contenido */
+  }
+  
+  .card {
+    border-radius: 10px; /* Bordes redondeados para las tarjetas */
+  }
+  

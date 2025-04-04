@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Publicaciones</h2>
+
+  <!-- Formulario para crear una nueva publicación -->
+  <form (ngSubmit)="createPost()" class="mb-4 shadow-sm p-4 rounded bg-light">
+    <div class="form-group">
+      <label for="fileInput">Seleccionar imagen:</label>
+      <input type="file" (change)="onFileSelected($event)" class="form-control-file" id="fileInput" required>
+    </div>
+
+    <div class="form-group">
+      <label for="captionInput">Descripción:</label>
+      <input type="text" [(ngModel)]="caption" name="caption" class="form-control" id="captionInput" placeholder="Escribe una descripción..." required>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Publicar</button>
+  </form>
+
+  <!-- Publicaciones -->
+  <div *ngFor="let post of posts" class="post mb-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <!-- Mostrar nombre de usuario -->
+        <h5 class="card-title">{{ post.user.name }}</h5>
+        <p class="card-text">{{ post.caption }}</p>
+
+        <!-- Mostrar imagen si existe -->
+        <img *ngIf="post.image_path" [src]="'http://127.0.0.1:8000/storage/' + post.image_path" alt="Imagen del post" class="img-fluid rounded mb-3">
+
+        <!-- Botón de like -->
+        <button (click)="toggleLike(post)" class="btn btn-outline-secondary">
+          {{ post.liked ? '❤️' : '🤍' }} {{ post.likes }}
+        </button>
+
+        <!-- Sección de comentarios -->
+        <div class="mt-3">
+          <input type="text" [(ngModel)]="post.newComment" class="form-control mb-2" placeholder="Escribe un comentario">
+          <button (click)="addComment(post)" class="btn btn-outline-info">Comentar</button>
+        </div>
+
+        <!-- Mostrar comentarios -->
+        <div *ngFor="let comment of post.comments" class="mt-2">
+          <p><strong>{{ comment.user.name }}:</strong> {{ comment.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

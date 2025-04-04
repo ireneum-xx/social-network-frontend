@@ -1,0 +1,6 @@
+<div *ngIf="authService.isLoggedIn()">
+  <button (click)="logout()" class="btn btn-danger btn-sm">
+    Cerrar sesión
+  </button>
+</div>
+<router-outlet></router-outlet>

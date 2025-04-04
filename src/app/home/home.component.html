@@ -1,0 +1,21 @@
+<div class="home-container container mt-5">
+  <!-- Sección de perfil -->
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <div class="profile text-center">
+        <!-- Foto de perfil -->
+        <img [src]="'http://127.0.0.1:8000/storage/' + user.profile_picture" alt="Foto de perfil" class="img-fluid rounded-circle mb-3 profile-img">
+        <!-- Biografía del usuario -->
+        <p class="bio text-muted">{{ user.bio }}</p>
+      </div>
+    </div>
+
+    <!-- Sección de feed -->
+    <div class="col-md-8">
+      <div class="feed">
+        <h3>Your Feed</h3>
+        <app-posts></app-posts>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos del formulario */
+form {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+form label {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+form .form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+form .form-control:focus {
+  border-color: #ff4081;
+  box-shadow: 0 0 5px rgba(255, 64, 129, 0.5);
+}
+
+form .btn {
+  background-color: #ff4081;
+  color: white;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+form .btn:hover {
+  background-color: #e63946;
+}
+
+form .btn-block {
+  display: block;
+}
+
+form .mt-3 {
+  margin-top: 1rem;
+}
+
+form a {
+  color: #ff4081;
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
